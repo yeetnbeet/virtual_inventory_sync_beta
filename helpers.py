@@ -43,6 +43,7 @@ def get_variant_id(sku):
     while response is not None and id == '':
         print(count)
         count += 1
+        print(response.links)
         response = req.get(response.links["next"]["url"],headers=H)
         res = response.json()
         for item in res["variants"]:
